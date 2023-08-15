@@ -4,7 +4,7 @@
 Statistical Analysis of the Weather Research and Forecasting Model Thermodynamic Global Warming Simulation Dataset for Outliers and Anomalies
 Repository for the TGW WRF QA/QC process within IM3
 
-Max Martell, Casey McGrath, Travis Thurber
+Max Martell, Casey McGrath, Travis Thurber. 
 Corresponding author(s): Max Martell (max.martell@pnnl.gov)
 
 ## Abstract
