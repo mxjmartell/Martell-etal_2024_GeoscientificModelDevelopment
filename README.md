@@ -1,41 +1,19 @@
 [![DOI](https://zenodo.org/badge/265119113.svg)](https://zenodo.org/badge/latestdoi/265119113)
 
-# metarepo
-Template repository for a single point of access meta-repository to reproduce an experiment
+# Martell et al. (2023) Nature Scientific Data - Data Descriptor
+Statistical Analysis of the Weather Research and Forecasting Model Thermodynamic Global Warming Simulation Dataset for Outliers and Anomalies
+Repository for the TGW WRF QA/QC process within IM3
 
-## Purpose
-A meta-repository creates a single point of access for someone to find all of the components that were used to create a published work for the purpose of reproducibility.  This repository should contain references to all minted data and software as well as house any ancillary code used to transform the source data, create figures for your publication, conduct the experiment, and / or execute the contributing software.
+Max Martell, Casey McGrath, Travis Thurber
+Corresponding author(s): Max Martell (max.martell@pnnl.gov)
 
-## Using the template
-Simply click `Use this template` on the main repository page (shows up to the left of `Clone or download`) and fill in your `Repository name`, the `Description`, select whether you want the repository to be `Public` or `Private`, and leave `Include all branches` unchecked.
+## Abstract
+This paper describes a dataset created for quality assurance and quality control (QA/QC) methodology applied to the Weather Research and Forecasting (WRF) model Thermodynamic Global Warming (TGW) simulation. The 40-year WRF historical dataset (1979-2019) and future time period datasets were analysed for 25 variables over the contiguous United States. Statistical analyses were performed to assess data quality, including summary statistics, tests for normality, and identification of outliers. Specific anomalies were also investigated, such as non-physical values. The standardized QA/QC methodology and resulting dataset provide a framework for comparable climate models to assess and improve confidence in simulation outputs. The QA/QC dataset and code used to generate it are publicly available. This methodology enables rigorous evaluation of model accuracy, while remaining feasible for models with limited resources, demonstrating a straightforward approach to QA/QC that enhances reliability of climate model datasets.
 
-## Naming your meta-repository
-The following naming conventions should be used when naming your repository:  
-- Single author:  `lastname_year_journal`
-- Multi author:  `lastname-etal_year_journal`
-- Multiple publications in the same journal:  `lastname-etal_year-letter_journal` (e.g., `human-etal_2020-b_nature`)
+## Code Reference
+https://github.com/IMMM-SFA/wrf_qa_qc
 
-## Customize your `.gitignore` file
-A general `.gitignore` for use with Python or R development is included.  However, you may wish to customize this to the needs of your project.  The `.gitignore` file lets Git know what to push to the remote repository and what needs to be ignored and stay local.
+## ReadMe
+-create_climate_variables.py creates the new climate varaibles (like RH), find_stats_and_dist.py is the functions for analysis of stats and distributions, find_outliers.py is the functions for analysis of outers, get_monthly_stats.py calls the functions and stores them as netcdf files in nested yearly directories by month for "*all_stats.nc", "*all_outliers.nc" and "*normality.nc" (normality stored separately from "*all_stats.nc, since it is a single value across time, and space). Finally run_in_parralell.py runs the analysis in parallel by year
 
-## Suggestions
-- Don't bog down your repository with a bunch of raw data.  Instead archive and mint a DOI for your data and provide the reference in this repository with instructions for use.
-- Create complete and tested documentation for how to use what is in this repository to reproduce your experiment.
-
-## Creating a minted release for your meta-repository
-It is important to version and release your meta-repository as well due to changes that may occur during the publication review process.  If you do not know how to conduct a release on GitHub when linked with Zenodo, please contact chris.vernon@pnnl.gov to get set up.  
-
-## The meta-repository markdown template
-A sample meta-repository template is provided in this repository in the file `metarepo_template.md`.  
-
-To use it, do the following:
-1. Create the template repository as mentioned above in [Using the template](#using-the-template)
-2. Clone your new repository to you local machine
-3. Change directories into your new meta-repository directory you just cloned
-4. Run `git rm README.md` to delete this file (`README.md`) and commit it using `git commit -m 'remove instructions'`
-5. Rename `metarepo_template.md` as `README.md`
-6. Run `git add README.md` to stage the new file that will show up on load in your remote GitHub repository
-7. Run `git rm metarepo_template.md` to remove the original template
-8. Run `git commit -m 'set up new template as readme'` to set the changes
-9. Run `git push` to send the changes to your remote GitHub repository
-10. Modify the `README.md` file to represent your experiement and use the `add`, `commit`, `push` workflow to update your remote repository
+-filter_outliers_nan.py, and run_filter_outliers.py removes the padded nans from the "*all_outliers.nc" files
