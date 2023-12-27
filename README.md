@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/265119113.svg)](https://zenodo.org/badge/latestdoi/265119113)
 
-# Martell et al. (2023) Nature Scientific Data - Data Descriptor
+# Martell et al. (2024) Geoscientific Model Development
 Statistical Analysis of the Weather Research and Forecasting Model Thermodynamic Global Warming Simulation Dataset for Outliers and Anomalies
 Repository for the TGW WRF QA/QC process within IM3
 
