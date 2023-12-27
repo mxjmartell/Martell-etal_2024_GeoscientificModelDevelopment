@@ -17,3 +17,6 @@ https://github.com/IMMM-SFA/wrf_qa_qc
 * create_climate_variables.py creates the new climate varaibles (like RH), find_stats_and_dist.py is the functions for analysis of stats and distributions, find_outliers.py is the functions for analysis of outers, get_monthly_stats.py calls the functions and stores them as netcdf files in nested yearly directories by month for "*all_stats.nc", "*all_outliers.nc" and "*normality.nc" (normality stored separately from "*all_stats.nc, since it is a single value across time, and space). Finally run_in_parralell.py runs the analysis in parallel by year
 
 * filter_outliers_nan.py, and run_filter_outliers.py removes the padded nans from the "*all_outliers.nc" files
+
+## References
+* Jones, A.D., D. Rastogi, P. Vahmani, A. Stansfield, K. Reed, T.B. Thurber, P. Ullrich, & J.S. Rice, (2022). IM3/HyperFACETS Thermodynamic Global Warming (TGW) Simulation Datasets (v1.0.0). MSD-LIVE Data Repository. <doi:10.57931/1885756>
