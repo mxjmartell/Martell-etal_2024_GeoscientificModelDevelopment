@@ -18,5 +18,12 @@ https://github.com/IMMM-SFA/wrf_qa_qc
 
 * filter_outliers_nan.py, and run_filter_outliers.py removes the padded nans from the "*all_outliers.nc" files
 
+## Usage Notes
+The QA/QC dataset can be accessed using the Xarray Python package, but the files are stored as NetCDF data, so any language with NetCDF reading capability may be used. The outlier and anomaly tables stored in Python dictionaries can be accessed using standard Python dictionary methods. The structure for these dictionaries is shown below: 
+
+* outlier_dict[month (int)][outlier_type (str)][variable (str)]
+
+If the user is interested in any additional analysis or in reproducing the data, the analysis code is wrapped into a single function with arguments to specify the date range of data and analysis types to perform. The code itself is designed to be highly modular for customizing further analyses and including additional functions.
+
 ## References
 * Jones, A.D., D. Rastogi, P. Vahmani, A. Stansfield, K. Reed, T.B. Thurber, P. Ullrich, & J.S. Rice, (2022). IM3/HyperFACETS Thermodynamic Global Warming (TGW) Simulation Datasets (v1.0.0). MSD-LIVE Data Repository. [doi:10.57931/1885756](https://www.osti.gov/biblio/1885756 "IM3/HyperFACETS Thermodynamic Global Warming (TGW) Simulation Datasets")
